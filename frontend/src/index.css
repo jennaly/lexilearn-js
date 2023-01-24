@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gaegu:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+body {
+  background: rgb(240,230,223);
+  background: linear-gradient(34deg, rgba(240,230,223,1) 0%, rgba(232,219,212,1) 5%, rgba(230,215,208,1) 11%, rgba(225,195,187,1) 25%, rgba(237,197,113,1) 60%, rgba(255,211,204,1) 99%);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+}
+
+.layout {
+  padding: 0 1.25rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.nav-bar {
+  padding: 0 1.25rem;
+}
+
+.sticky-note {
+  background: rgb(235, 214, 120);
+  box-shadow: 10px 8px 5px grey;
+  transition: margin 0.25s ease-in-out;
+}
+
+.sticky-note:hover {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
