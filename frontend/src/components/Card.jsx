@@ -84,7 +84,7 @@ const Card = ({ showCard }) => {
             const removeWordFromDB = async () => {
                 const { _id } = deletedWord;
 
-                const res = await fetch(`http://localhost:8882/api/favoriteWords/${_id}`, {
+                const res = await fetch(`https://lexilearn-server.up.railway.app/api/favoriteWords/${_id}`, {
                     method: "DELETE",
                     headers: {
                         'Authorization': `Bearer ${user.token}`
