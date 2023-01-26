@@ -53,7 +53,7 @@ This is version 2.0 of a previous project that I built in the earlier stage of m
 -	An Express server that not only serves as a proxy API, but also connects to MongoDB and utilizes JWT to support user-specific applications such as account registration, login, and in this case – saving vocabulary words to a study set that can be accessed and reviewed from anywhere. The contents of the study set can also be easily modified.
 -	TailwindCSS to replace custom CSS for more consistent and responsive design across different screen sizes and devices.
 
-In comparison, the first version of Lexi Learn was built with HTML, CSS, and vanilla JavaScript. LocalStorage was used to save past word searches locally, and Owlbot was the only API integrated. The server was created primarily to secure the Owlbot access key API as well as to proxy requests to said API as they did not have CORS support at the time. While this 
+In comparison, the first version of Lexi Learn was built with HTML, CSS, and vanilla JavaScript. LocalStorage was used to save past word searches locally, and Owlbot was the only API integrated. The server was created primarily to secure the Owlbot access key API as well as to proxy requests to said API as they did not have CORS support at the time. 
 
 ### Relevant links to the old version of Lexi Learn can be found below:
 
