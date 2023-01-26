@@ -7,9 +7,6 @@
   <ol>
     <li><a href="#about-the-project"> About The Project</a></li>
     <li><a href="#features">Features</a></li>
-     - <a href="#customized-study-resource"> Customized Study Resource</a><br />
-     - <a href="#teaching-aid-in-language-arts">Teaching Aid in Language Arts</a><br />
-     - <a href="#organized-submissions"> Organized Submissions</a>
     <li><a href="#tech-stack">Tech Stack</a></li>
     <li><a href="#optimizations"> Optimizations</a></li>
     <li><a href="#project-evolution">Project Evolution</a></li>
