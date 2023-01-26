@@ -14,6 +14,7 @@
     <li><a href="#optimizations"> Optimizations</a></li>
     <li><a href="#project-evolution">Project Evolution</a></li>
     - <a href="#customized-study-resource"> Links to early version of Lexi Learn</a>
+    <li><a href="#using-lexi-learn">Using Lexi Learn</a></li>
   </ol>
 </details>
 
@@ -62,4 +63,20 @@ In comparison, the first version of Lexi Learn was built with HTML, CSS, and van
 **Front-end code:**  https://github.com/jennaly/lexilearn-dictionary
 
 **Server/Proxy API:** https://github.com/jennaly/lexilearn-proxy-api
+
+## Using Lexi Learn
+### Register as a new user or login to account
+![login:signup](https://user-images.githubusercontent.com/106183040/214964996-8168b9a7-4d06-4887-af88-a8058c55387f.gif)
+
+### Look up words and save them or review from your study set
+![searchWords](https://user-images.githubusercontent.com/106183040/214966122-d6e7516f-53e7-441c-92e7-f3656d14d331.gif)
+
+### Remove words from your study set
+![removeWords](https://user-images.githubusercontent.com/106183040/214966326-22075ea5-50b1-40cd-a0c8-868482165d91.gif)
+
+### Download files as .csv 
+![downloadFiles](https://user-images.githubusercontent.com/106183040/214966405-425d11fb-f1db-4c33-90a5-4d997dbc4c70.gif)
+
+### Download files when not logged in
+![noLoggedIn](https://user-images.githubusercontent.com/106183040/214966505-67e205c1-beaa-43b1-8a63-625cd237bf04.gif)
 
