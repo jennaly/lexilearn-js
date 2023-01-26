@@ -1,5 +1,7 @@
 # Lexi Learn Dictionary
 
+Welcome to version 2.0 of Lexi Learn! With this update, I've focused on providing a better personal learning experience for students and a promising teaching aid for educators. To see how Lexi Learn has grown and the new features that have been added, checkout the [Project Evolution](#project-evolution) section in this README!
+
 **Deployed Link:** http://lexilearn.vercel.app/
 
 <details open="open">
