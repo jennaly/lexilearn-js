@@ -76,9 +76,9 @@ In comparison, the first version of Lexi Learn was built with HTML, CSS, and van
 ### Remove words from your study set
 ![removeWords](https://user-images.githubusercontent.com/106183040/214966326-22075ea5-50b1-40cd-a0c8-868482165d91.gif)
 
-### Download files as .csv 
+### Downloading files as .csv 
 ![downloadFiles](https://user-images.githubusercontent.com/106183040/214966405-425d11fb-f1db-4c33-90a5-4d997dbc4c70.gif)
 
-### Download files when not logged in
+### Downloading files when not logged in
 ![noLoggedIn](https://user-images.githubusercontent.com/106183040/214966505-67e205c1-beaa-43b1-8a63-625cd237bf04.gif)
 
