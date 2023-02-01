@@ -6,7 +6,6 @@ Welcome to version 2.0 of Lexi Learn! With this update, I've focused on providin
 
 <img width="1440" alt="Screen Shot 2023-01-29 at 3 45 53 PM" src="https://user-images.githubusercontent.com/106183040/215362853-66b96271-2a44-445c-9531-db8767c93c07.png">
 
-
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
@@ -36,6 +35,10 @@ Lexi Learn also provides a feature for students to generate reports on their own
 
 ### Organized Submissions
 The file names for study sets and teacher's reports will be automatically generated. The study set files will be named in the format of "YYYY-MM-DD-StudySet-StudentName" and the teacher's report files will be named in the format of "YYYY-MM-DD-Report-StudentName". This makes it easy for both students and educators to easily locate and identify their files and eliminates the need for manual naming and organization. 
+
+#### Example of Study Set and Teacher's Report .csv files
+![image](https://user-images.githubusercontent.com/106183040/216186390-72d2aafb-2408-44f6-b2be-3f6ef2ce7866.png)
+
 
 ## Tech Stack
 - Uses JSON Web Token (JWT) for user authentication and request authorization
