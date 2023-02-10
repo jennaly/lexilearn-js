@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAuthContext } from '../hooks/useAuthContext';
 import { useFavoriteWordsContext } from '../hooks/useFavoriteWordsContext';
 
 const DownloadButtons = () => {
-
+    const { user } = useAuthContext();
     const { favoriteWords } = useFavoriteWordsContext();
-
+    
+    const [name, setName] = useState('')
+    const [showNameInput, setShowNameInput] = useState(false);  
     const todayDate = new Date().toISOString().slice(0, 10);
+
+    useEffect(() => {
+      if (user) {
+        setName(user.name);
+      } 
+    }, [user])
+
+    const handleClick = (e, cb) => {
+      if (!name) {
+        setShowNameInput(true);
+      } else {
+        const formattedName = formatName(name);
+        cb(e, formattedName);
+        setShowNameInput(false);
+      }
+    }
 
     const downloadFile = ({ data, fileName, fileType }) => {
         const blob = new Blob([data], { type: fileType })
@@ -22,9 +41,16 @@ const DownloadButtons = () => {
         a.remove()
     }
 
-    const exportToStudySetCsv = e => {
+    const formatName = (fullName) => {
+      return fullName
+              .split(" ")
+              .map((word, index) => index == 0 ? word : word[0])
+              .join("");
+    }
+
+    const exportToStudySetCsv = (e, formattedName) => {
         e.preventDefault()
-      
+
         // Headers for each column
         let headers = ['Term', 'Definitions']
       
@@ -41,12 +67,12 @@ const DownloadButtons = () => {
       
         downloadFile({
           data:  [headers, ...vocabWordsCsv].join('\n'),
-          fileName: `${todayDate}-StudySet.csv`,
+          fileName: `${todayDate}-StudySet-${formattedName}.csv`,
           fileType: 'text/csv',
         })
     }
 
-    const exportToReportCsv = e => {
+    const exportToReportCsv = (e, formattedName) => {
         e.preventDefault()
       
         // Headers for each column
@@ -62,29 +88,48 @@ const DownloadButtons = () => {
       
         downloadFile({
           data:  [headers, ...vocabWordsCsv].join('\n'),
-          fileName: `${todayDate}-TeacherReport.csv`,
+          fileName: `${todayDate}-Report-${formattedName}.csv`,
           fileType: 'text/csv',
         })
     }
 
     return (
+      <>
+        {showNameInput &&
+          <div className="alert alert-warning shadow-lg">
+            <div className="flex font-gaegu text-lg lg:text-xl">
+              <label htmlFor="name" className="font-gaegu text-yellow-700 ">
+                Please enter your name: 
+                <input
+                id="name"
+                type="text"
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Miles Morales"
+                value={name}
+                className="bg-transparent p-0.5 ml-1"
+                />
+              </label>
+            </div>
+          </div>
+        }
         <div className="flex max-w-sm lg:max-w-xl mx-auto justify-center gap-5 m-5 text-sm lg:text-base">
             <button 
             type='button' 
-            onClick={exportToStudySetCsv}
-            className="rounded-none lg:rounded-full outline outline-1 bg-yellow-700 outline-yellow-700 hover:border hover:border-yellow-800 hover:bg-yellow-800 font-fredoka-one text-base-100 uppercase"
+            onClick={(e) => handleClick(e, exportToStudySetCsv)}
+            className="rounded-none lg:rounded-full bg-yellow-700 hover:bg-yellow-800 hover:border-yellow-800 font-fredoka-one text-base-100 uppercase"
             >
                 Download Study Set
             </button>
 
             <button 
             type='button' 
-            onClick={exportToReportCsv}
-            className="rounded-none lg:rounded-full outline outline-1 outline-yellow-700 hover:border hover:border-yellow-700 text-yellow-700 font-fredoka-one uppercase"
+            onClick={(e) => handleClick(e, exportToReportCsv)}
+            className="rounded-none lg:rounded-full border-2 border-yellow-700 hover:border-yellow-800  text-yellow-700 hover:text-yellow-800 font-fredoka-one uppercase"
             >
                 Download Teacher's Report
             </button>
         </div>
+      </>
     )
 }
 

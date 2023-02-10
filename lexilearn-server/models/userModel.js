@@ -11,11 +11,15 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    name: {
+        type: String,
+        required: true,
     }
 })
 
 // statics cannot be declared with arrow functions
-userSchema.statics.signup = async function (email, password) {
+userSchema.statics.signup = async function (email, password, name) {
 
     const userExists = await this.findOne({ email });
 
@@ -39,7 +43,7 @@ userSchema.statics.signup = async function (email, password) {
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(password, salt);
 
-    const user = await this.create({ email, password: hash });
+    const user = await this.create({ email, password: hash, name });
 
     return user
 }

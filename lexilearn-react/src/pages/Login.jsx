@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLogin } from '../hooks/useLogin';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -14,7 +15,7 @@ const Login = () => {
     return (
             <div className="mb-4 mt-6 lg:max-w-xl mx-auto">
                 
-                <div className="card lg:w-96 bg-base-100 shadow-xl lg:h-[375px] flex flex-col">
+                <div className="card lg:w-96 bg-base-100 shadow-xl lg:h-[420px] flex flex-col">
                     <form onSubmit={handleSubmit} className="card-body justify-between text-lg lg:text-xl">
                         <h2 className="card-title font-fredoka-one text-4xl lg:text-5xl underline-offset-14 w-full pb-1 lg:pb-4 mr-6 border-b-2 border-yellow-700 text-yellow-700">
                             Login
@@ -47,8 +48,15 @@ const Login = () => {
                         </button>
 
                         { error && 
-                            <div className="font-gaegu text-yellow-500 text-center">{error}</div>
+                            <div className="font-gaegu text-red-600 text-center">{error}</div>
                         }
+                    
+                        <span className="font-gaegu text-yellow-700 text-center">
+                            Don't have an account? 
+                            <Link to="/signup">
+                                <span className="text-yellow-500"> Sign Up!</span>
+                            </Link>
+                        </span>
                     </form>
                 </div>
             </div>

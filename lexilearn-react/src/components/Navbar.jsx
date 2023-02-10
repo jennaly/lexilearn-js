@@ -49,13 +49,13 @@ const Navbar = () => {
                         {!user && 
                             <div className="flex gap-2">
                                 <Link to="/login">
-                                    <span className="btn btn-ghost text-yellow-700 hover:bg-yellow-800 hover:text-base-100 outline outline-1 outline-yellow-700 hover:border hover:border-yellow-800">
+                                    <span className="btn btn-ghost rounded-none text-yellow-700 hover:bg-yellow-800 hover:text-base-100 outline outline-1 outline-yellow-700">
                                     Login
                                     </span>
                                 </Link>
 
                                 <Link to="/signup">
-                                    <span className="btn btn-ghost text-yellow-700 hover:bg-yellow-800 hover:text-base-100 outline outline-1 outline-yellow-700 hover:border hover:border-yellow-800">
+                                    <span className="btn btn-ghost rounded-none text-yellow-700 hover:bg-yellow-800 hover:text-base-100 outline outline-1 outline-yellow-700">
                                     Signup
                                     </span>
                                 </Link>

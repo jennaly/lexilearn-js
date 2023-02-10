@@ -12,7 +12,7 @@ const Favorites = ({ setLoading, setShowCard }) => {
 
     const getWordData = async (word) => {
         const res = await fetch (
-            `https://lexilearn-server.up.railway.app/api/dictionary/${word}`
+            `https://lexilearn-server.cyclic.app/api/dictionary/${word}`
           )
     
         const data = await res.json();
@@ -37,7 +37,7 @@ const Favorites = ({ setLoading, setShowCard }) => {
             const removeWordFromDB = async (word) => {
                 const { _id } = word;
 
-                const res = await fetch(`https://lexilearn-server.up.railway.app/api/favoriteWords/${_id}`, {
+                const res = await fetch(`https://lexilearn-server.cyclic.app/api/favoriteWords/${_id}`, {
                     method: "DELETE",
                     headers: {
                         'Authorization': `Bearer ${user.token}`
@@ -70,7 +70,7 @@ const Favorites = ({ setLoading, setShowCard }) => {
                             <div className="absolute -right-2 -top-2">
                                 <button 
                                 onClick={(e) => removeWordFromFavorites(e, word)}
-                                className="rounded-full p-2 hover:border hover:border-yellow-800">
+                                className="rounded-full bg-base-100 p-2 hover:border hover:border-yellow-800">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                                 </button>
                             </div>

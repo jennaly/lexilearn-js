@@ -24,9 +24,12 @@ export const favoriteWordsReducer = (state, action) => {
 
 export const FavoriteWordsContextProvider = ({ children }) => {
     const { user } = useAuthContext();
-    const data = JSON.parse(localStorage.getItem('favoriteWords'))
+    
+    const favoriteWordsFromLocalStorage = JSON.parse(localStorage.getItem('favoriteWords'));
+    
+    const initialState = user ? [] : favoriteWordsFromLocalStorage || [];
 
-    const [state, dispatch] = useReducer(favoriteWordsReducer, { favoriteWords: user ? [] : data });
+    const [state, dispatch] = useReducer(favoriteWordsReducer, { favoriteWords: initialState });
 
     return (
         <FavoriteWordsContext.Provider value={{ ...state, dispatch }}>

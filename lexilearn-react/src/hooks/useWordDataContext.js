@@ -5,7 +5,7 @@ export const useWordDataContext = () => {
      const context = useContext(WordDataContext);
      if (!context) {
           throw Error(
-               "useWordDataContext must be used inside an FavoriteWordsContextProvider"
+               "useWordDataContext must be used inside an wordDataContextProvider"
           );
      }
      return context;

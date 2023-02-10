@@ -17,7 +17,7 @@ const Index = () => {
 
     useEffect(() => {
         const fetchWords = async () => {
-          const res = await fetch( `https://lexilearn-server.up.railway.app/api/favoriteWords`, {
+          const res = await fetch( `https://lexilearn-server.cyclic.app/api/favoriteWords`, {
             headers: {
               'Authorization': `Bearer ${user.token}`
             }
@@ -43,15 +43,24 @@ const Index = () => {
 
     return (
         <div>
-            <Searchbar setLoading={ setLoading } setShowCard={ setShowCard }/>
+          <Searchbar setLoading={ setLoading } setShowCard={ setShowCard }/>
 
-            { loading && 
-                <Loading />
-            }
-            
-            <Card showCard={ showCard }/>
-            <Favorites setLoading={ setLoading } setShowCard={ setShowCard }/>
-            <DownloadButtons />
+          { loading && 
+              <Loading />
+          }
+          
+          {
+            showCard && 
+              <Card />
+          }
+
+          {
+            favoriteWords && favoriteWords.length > 0 && 
+              <Favorites setLoading={ setLoading } setShowCard={ setShowCard }/>
+          }
+          
+          <DownloadButtons />
+
         </div>
     )
 }

@@ -8,7 +8,7 @@ const Searchbar = ({ setLoading, setShowCard }) => {
     
     const getWordData = async (word) => {
         const res = await fetch (
-            `https://lexilearn-server.up.railway.app/api/dictionary/${word}`
+            `https://lexilearn-server.cyclic.app/api/dictionary/${word}`
           )
     
         const data = await res.json();
@@ -27,11 +27,13 @@ const Searchbar = ({ setLoading, setShowCard }) => {
 
         if (data.definitions) {
             dataDispatch({ type: "GET_WORD_DATA", payload: data });
+            setSearchWord("");
 
         } else {
             dataDispatch({ type: "GET_WORD_DATA", payload: [] });
 
         }
+
     }
 
     return (
@@ -43,10 +45,11 @@ const Searchbar = ({ setLoading, setShowCard }) => {
                 onChange={(e => setSearchWord(e.target.value))}
                 placeholder="Type here" 
                 className="w-full bg-base-100 mx-1 lg:mx-2 focus:outline-none font-gaegu text-yellow-700 text-xl lg:text-2xl" 
+                value={searchWord}
                 />
                 <button 
                 type="submit"
-                className="bg-yellow-700 m-1 rounded-full text-base-100 tracking-widest font-gaegu hover:bg-yellow-800"
+                className="bg-yellow-700 m-1 rounded-full text-base-100 tracking-widest font-gaegu hover:bg-yellow-800 hover:border-yellow-800"
                 >
                     Search
                     </button>

@@ -13,11 +13,13 @@ const loginUser = async (req, res) => {
     try {
         const user = await User.login(email, password);
 
+        const { name } = user;
+
         // create a token
 
         const token = createToken(user._id);
 
-        res.status(200).json({ email, token });
+        res.status(200).json({ email, token, name });
 
     } catch (error) {
 
@@ -27,16 +29,16 @@ const loginUser = async (req, res) => {
 
 // signup user
 const signupUser = async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, name } = req.body;
 
     try {
-        const user = await User.signup(email, password);
+        const user = await User.signup(email, password, name);
 
         // create a token
 
         const token = createToken(user._id);
 
-        res.status(200).json({ email, token });
+        res.status(200).json({ email, token, name });
 
     } catch (error) {
 

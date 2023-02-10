@@ -1,20 +1,19 @@
 import { useState } from 'react';
 import { useAuthContext } from './useAuthContext';
 
-
-export const useLogin = () => {
+export const useSignup = () => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const { dispatch } = useAuthContext();
 
-    const login = async (email, password) => {
+    const signup = async (email, password, name) => {
         setIsLoading(true);
         setError(null);
 
-        const res = await fetch("https://lexilearn-server.up.railway.app/api/user/login", {
+        const res = await fetch("https://lexilearn-server.cyclic.app/api/user/signup", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password, name }),
         })
 
         const data = await res.json();
@@ -35,6 +34,6 @@ export const useLogin = () => {
 
     }
 
-    return { login, isLoading, error }
+    return { signup, isLoading, error }
 }
 

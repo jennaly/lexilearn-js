@@ -12,9 +12,6 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-// connect to database
-connectDB();
-
 // middleware 
 app.use(cors());
 app.use(urlencoded({ extended: true }));
@@ -25,4 +22,7 @@ app.use('/api/dictionary', dictionaryRoutes)
 app.use('/api/favoriteWords', favoriteWordsRoutes);
 app.use('/api/user', userRoutes)
 
-app.listen(PORT, console.log(`server running at port ${PORT}`));
+// connect to DB before listening
+connectDB().then(() => {
+    app.listen(PORT, console.log(`server running at port ${PORT}`));
+});
