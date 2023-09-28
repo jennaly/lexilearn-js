@@ -1,5 +1,5 @@
 # Lexi Learn Dictionary
-UPDATE 09/27/2023: OwlBot API is no longer viable and I'm currently exploring alternative options for a dependable dictionary API. Please stay tuned for updates on my progress in finding a suitable replacement!
+**UPDATE 09/27/2023: OwlBot API is no longer viable and I'm currently exploring alternative options for a dependable dictionary API. Please stay tuned for updates on my progress in finding a suitable replacement!**
 
 Welcome to version 2.0 of Lexi Learn! With this update, I've focused on providing a better personal learning experience for students and a promising teaching aid for educators. To see how Lexi Learn has grown and the new features that have been added, checkout the [Project Evolution](#project-evolution) section in this README!
 
